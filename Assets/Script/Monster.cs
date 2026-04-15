@@ -32,10 +32,31 @@ public class Monster : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject ex = Instantiate(preEX);
-        ex.transform.position = transform.position;
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            GameObject gamemanager = GameObject.Find("Gamemanager");
+            ScoreManager scoremanager = gamemanager.GetComponent<ScoreManager>();
+
+            scoremanager.nowScore++;
+            scoremanager.nowScoreUI.text = "Now Score: " + scoremanager.nowScore;
+
+            if(scoremanager.nowScore > scoremanager.BestScore)
+            {
+                scoremanager.BestScore = scoremanager.nowScore;
+                scoremanager.BestScoreUI.text = "BestScore:" + scoremanager.BestScore;
+
+                PlayerPrefs.SetInt("BestScore", scoremanager.BestScore);
+            }
+
+
+            GameObject ex = Instantiate(preEX);
+            ex.transform.position = transform.position;
+
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
 
