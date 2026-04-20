@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterMove : MonoBehaviour
 {
     public float movespeed = 5f;
+    public GameObject effectPrefab; // 인스펙터에서 폭발 이펙트 프리팹을 드래그하세요.
     void Start()
     {
 
@@ -29,5 +30,19 @@ public class CharacterMove : MonoBehaviour
 
         //Vector3 direction = new Vector3(horizontal, 0f, vertical);
         //transform.Translate(direction * movespeed * Time.deltaTime);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+        if (collision.gameObject.CompareTag("Enemy")) // 적과 충돌하면
+        {
+            if (effectPrefab != null)
+                Instantiate(effectPrefab, transform.position, Quaternion.identity); // 현재 내 위치에 푹발 이펙트 생성
+
+            // 매니저 호출 추가
+            GameManager.instance.GameOver(); // 게임 오버 UI 불러오기
+
+            Destroy(gameObject); // 자폭
+        }
     }
 }

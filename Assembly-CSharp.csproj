@@ -100,6 +100,7 @@
     <Compile Include="Assets\Script\CutLineWqll.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Script\CharacterMove.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\AwesomeCartoonPlanes\Scripts\Plane.cs" />
     <Compile Include="Assets\AwesomeCartoonPlanes\Scripts\RotateCamera.cs" />
     <Compile Include="Assets\StarfieldMaterials\Scripts\Move.cs" />
@@ -114,6 +115,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\SpaceGameBgm#2\ReadMe.txt" />
     <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
     <None Include="Assets\ShootingSound\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
